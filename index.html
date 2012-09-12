@@ -12,47 +12,6 @@
 		<script src="js/jquery-1.8.1.min.js"></script>
 		
 		<script src="js/hero_downloader.js"></script>
-
-		<style>
-			#equipmentCanvas {
-			border: 1px solid #9C9898;
-		  }
-		</style>
-		 <script>		
-      window.onload = function() {
-        var canvas = document.getElementById("equipmentCanvas");
-        var context = canvas.getContext("2d");
-        var imageObj = new Image();
-		
-				 // position of male characters
-		 var positions = {
-							'barbarian': [1, 0],
-							'demon-hunter': [3, 0],
-							'monk': [1, 1],
-							'witch-doctor': [3, 1],
-							'wizard': [1, 2]
-							};	
-		var klasa = "monk";
-		var gender = 1;
-
-        imageObj.onload = function() {
-          // draw cropped image
-          var sourceX = (positions[klasa][0] - gender) * 509;
-          var sourceY = positions[klasa][1] * 436;
-          var sourceWidth = 509;
-          var sourceHeight = 436;
-          var destWidth = sourceWidth;
-          var destHeight = sourceHeight;
-          var destX = 0;
-          var destY = 0;
-
-          context.drawImage(imageObj, sourceX, sourceY, sourceWidth, sourceHeight, destX, destY, destWidth, destHeight);
-        };
-        imageObj.src = "img/classes.png";
-      };
-
-    </script>
-	</head>
 	<body>
 	<header>
 		<h1>d3-hero-tool</h1>
@@ -63,6 +22,8 @@
 			<h1></h1>
 			<h2><span class="hero_class"></span>, level <span class="level"></span> <span class="paragon"></span></h2>
 		</header>
+		<input type="text" id="url" />
+		<input type="submit" id="load_url" />
 		<section id="sheet">
 			<section id="equipment">
 				<canvas id="equipmentCanvas" width="509" height="436"></canvas>
