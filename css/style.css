@@ -1,0 +1,15 @@
+h1, h2 {
+	margin: 0;
+}
+
+article header {
+	text-align: center;
+}
+
+article header h1 {
+	font-size: 300%;
+}
+
+article header .paragon {
+	color: #6F88BE;
+}
