@@ -14,30 +14,12 @@ function fill_equipment(hero_class, gender)
         var context = canvas.getContext("2d");
         var imageObj = new Image();
 		
-				 // position of male characters
-		 var positions = {
-							'barbarian': [1, 0],
-							'demon-hunter': [3, 0],
-							'monk': [1, 1],
-							'witch-doctor': [3, 1],
-							'wizard': [1, 2]
-							};	
-
         $(imageObj).load(function() {
-          // draw cropped image
-          var sourceX = (positions[hero_class][0] - gender) * 509;
-          var sourceY = positions[hero_class][1] * 436;
-          var sourceWidth = 509;
-          var sourceHeight = 436;
-          var destWidth = sourceWidth;
-          var destHeight = sourceHeight;
-          var destX = 0;
-          var destY = 0;
 
-          context.drawImage(imageObj, sourceX, sourceY, 509, 436, 0, 0, 509, 436);
+          context.drawImage(imageObj, 0, 0, 509, 436, 0, 0, 509, 436);
         });
 		
-        imageObj.src = "img/classes.png";
+        imageObj.src = "img/classes/" + hero_class + "-" + gender + ".png";
       });
 }
 
