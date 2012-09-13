@@ -16,13 +16,12 @@ article header .paragon {
 
 
 #equipment {
-    position:relative
-}
-#equipment canvas {
-    position:absolute;
+    position:relative;
 
-    z-index:0
+    width: 509px;
+    height: 437px;
 }
+
 #equipment div {
     position:absolute;
 
@@ -30,18 +29,38 @@ article header .paragon {
 }
 
 #equipment div {
-    background: url("../img/item_backgrounds/rare_big.png");
+    background-position: center center;
     background-size: 95% 95%;
     background-repeat: no-repeat;
-    background-position: center center;
+}
+
+#equipment .blueBig {
+    background-image: url("../img/item_backgrounds/blueBig.png");
+}
+
+#equipment .yellowBig {
+    background-image: url("../img/item_backgrounds/yellowBig.png");
+}
+
+#equipment .orangeBig {
+    background-image: url("../img/item_backgrounds/orangeBig.png");
+}
+
+#equipment .greenBig {
+    //background-image: url("../img/item_backgrounds/greenBig.png");
+    background-image: url("../img/item_backgrounds/orangeBig.png");
 }
 
 #equipment #head {
-    left: 325px;
-    top: 17px;
+    left: 323px;
+    top: 16px;
 
-    width: 64px;
-    height: 64px;
+    width: 67px;
+    height: 65px;
+}
+
+#equipment img {
+    margin-left: 2px;
 }
 
 #equipment #head img {
@@ -49,11 +68,11 @@ article header .paragon {
 }
 
 #equipment #torso {
-    left: 316px;
-    top: 86px;
+    left: 314px;
+    top: 83px;
 
-    width: 82px;
-    height: 111px;
+    width: 85px;
+    height: 117px;
 }
 
 #equipment #torso img {
@@ -61,33 +80,130 @@ article header .paragon {
 }
 
 #equipment #feet {
-    left: 326px;
-    top: 334px;
+    left: 323px;
+    top: 332px;
 
-    width: 64px;
-    height: 86px;
+    width: 67px;
+    height: 88px;
 }
 
 #equipment #feet img {
     margin-top: -20px;
-}
-
-#equipment #mainHand {
-    left: 217px;
-    top: 291px;
-
-    width: 64px;
-    height: 130px;
+    margin-left: 0px;
 }
 
 #equipment #hands {
-    left: 217px;
-    top: 138px;
+    left: 215px;
+    top: 136px;
 
-    width: 64px;
-    height: 86px;
+    width: 67px;
+    height: 89px;
 }
 
 #equipment #hands img {
     margin-top: -20px;
+}
+
+#equipment #shoulders {
+    left: 241px;
+    top: 37px;
+
+    width: 67px;
+    height: 89px;
+}
+
+#equipment #shoulders img {
+    margin-top: -20px;
+}
+
+#equipment #legs {
+    left: 323px;
+    top: 240px;
+
+    width: 67px;
+    height: 89px;
+}
+
+#equipment #legs img {
+    margin-top: -20px;
+}
+
+#equipment #bracers {
+    left: 431px;
+    top: 136px;
+
+    width: 67px;
+    height: 89px;
+}
+
+#equipment #bracers img {
+    margin-top: -20px;
+}
+
+#equipment #mainHand {
+    left: 215px;
+    top: 289px;
+
+    width: 67px;
+    height: 134px;
+}
+
+#equipment #offHand {
+    left: 431px;
+    top: 289px;
+
+    width: 67px;
+    height: 134px;
+}
+
+#equipment #waist {
+    left: 314px;
+    top: 204px;
+
+    width: 85px;
+    height: 32px;
+}
+
+#equipment #waist img {
+    margin-top: -15px;
+    margin-left: 11px;
+}
+
+#equipment #rightFinger {
+    left: 443px;
+    top: 237px;
+
+    width: 43px;
+    height: 42px;
+}
+
+#equipment #rightFinger img {
+    margin-top: -12px;
+    margin-left: -9px;
+}
+
+#equipment #leftFinger {
+    left: 227px;
+    top: 237px;
+
+    width: 43px;
+    height: 42px;
+}
+
+#equipment #leftFinger img {
+    margin-top: -12px;
+    margin-left: -9px;
+}
+
+#equipment #neck {
+    left: 406px;
+    top: 59px;
+
+    width: 56px;
+    height: 54px;
+}
+
+#equipment #neck img {
+    margin-top: -6px;
+    margin-left: -3px;
 }

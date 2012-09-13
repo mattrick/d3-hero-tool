@@ -22,13 +22,12 @@ function loadImages(sources, callback) {
         }
       }
 
-function addItem(items, slot, images, context, coordinates)
+function addItem(items, slot)
 {
     if (items[slot])
     {
-        var image = images[items[slot]["displayColor"] + 'Big'];// + (slot == "leftFinger" || slot == "rightFinger" || slot == "neck") ? 'Small' : 'Big';];
-        //context.drawImage(image, coordinates[0], coordinates[1], coordinates[2], coordinates[3]);
         $("#equipment #" + slot).append('<img src="http://eu.media.blizzard.com/d3/icons/items/large/' + items[slot]["icon"] + '.png" />');
+        $("#equipment #" + slot).addClass(items[slot]["displayColor"] + 'Big');
     }
 }
 
@@ -46,30 +45,20 @@ var Tool = {
 
 	loadEquipment: function(hero_class, gender, items) {
 		$(function() {
-			var canvas = document.getElementById("equipmentCanvas");
-			var context = canvas.getContext("2d");
-
-			var sources = {
-				background: 'img/classes/' + hero_class + '-' + gender + '.png',
-
-				blueBig: 'img/item_backgrounds/magic_big.png',
-				yellowBig: 'img/item_backgrounds/rare_big.png',
-				orangeBig: 'img/item_backgrounds/legendary_big.png',
-				greenBig: 'img/item_backgrounds/set_big.png'
-			};
-
-			loadImages(sources, function(images) {
-				context.drawImage(images.background, 0, 0, 509, 436, 0, 0, 509, 436);
-
-                addItem(items, "head", images, context, [326, 19, 61, 59]);
-                addItem(items, "torso", images, context, [318, 88, 77, 108]);
-                addItem(items, "feet", images, context, [325, 337, 63, 81]);
-                addItem(items, "hands", images, context, [219, 141, 60, 80]);
-                addItem(items, "mainHand", images, context, [219, 294, 60, 124]);
-			});
-
-
-
+            $("#equipment").css('background-image', 'url(img/classes/' + hero_class + '-' + gender + '.png)');
+            addItem(items, "head");
+            addItem(items, "torso");
+            addItem(items, "feet");
+            addItem(items, "hands");
+            addItem(items, "shoulders");
+            addItem(items, "legs");
+            addItem(items, "bracers");
+            addItem(items, "mainHand");
+            addItem(items, "offHand");
+            addItem(items, "waist");
+            addItem(items, "rightFinger");
+            addItem(items, "leftFinger");
+            addItem(items, "neck");
 		});
 	},
 
@@ -95,9 +84,9 @@ var Tool = {
 
 $(function () {
 	//$("#load_url").click(function() {
-		//var url = "http://eu.battle.net/d3/pl/profile/mattrick-2123/hero/2762321";
+		var url = "http://eu.battle.net/d3/pl/profile/mattrick-2123/hero/2762321";
 		//var url = "http://eu.battle.net/d3/pl/profile/mattrick-2123/hero/2759703";
-        var url = "http://eu.battle.net/d3/pl/profile/mattrick-2123/hero/13098230";
+        //var url = "http://eu.battle.net/d3/pl/profile/mattrick-2123/hero/13098230";
 		//var url = $("#url").val();
 
 		Tool.loadUrl(url);
