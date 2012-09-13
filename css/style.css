@@ -14,6 +14,7 @@ article header .paragon {
 	color: #6F88BE;
 }
 
+
 #equipment {
     position:relative
 }
@@ -26,6 +27,49 @@ article header .paragon {
     position:absolute;
 
     z-index: 1;
+}
+
+#equipment div {
+    background: url("../img/item_backgrounds/rare_big.png");
+    background-size: 95% 95%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#equipment #head {
+    left: 325px;
+    top: 17px;
+
+    width: 64px;
+    height: 64px;
+}
+
+#equipment #head img {
+    margin-top: -31px;
+}
+
+#equipment #torso {
+    left: 316px;
+    top: 86px;
+
+    width: 82px;
+    height: 111px;
+}
+
+#equipment #torso img {
+    margin-top: -25px;
+}
+
+#equipment #feet {
+    left: 326px;
+    top: 334px;
+
+    width: 64px;
+    height: 86px;
+}
+
+#equipment #feet img {
+    margin-top: -20px;
 }
 
 #equipment #mainHand {
@@ -45,6 +89,5 @@ article header .paragon {
 }
 
 #equipment #hands img {
-    position:absolute;
     margin-top: -20px;
 }
