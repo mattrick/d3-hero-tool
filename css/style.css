@@ -13,3 +13,38 @@ article header h1 {
 article header .paragon {
 	color: #6F88BE;
 }
+
+#equipment {
+    position:relative
+}
+#equipment canvas {
+    position:absolute;
+
+    z-index:0
+}
+#equipment div {
+    position:absolute;
+
+    z-index: 1;
+}
+
+#equipment #mainHand {
+    left: 217px;
+    top: 291px;
+
+    width: 64px;
+    height: 130px;
+}
+
+#equipment #hands {
+    left: 217px;
+    top: 138px;
+
+    width: 64px;
+    height: 86px;
+}
+
+#equipment #hands img {
+    position:absolute;
+    margin-top: -20px;
+}
