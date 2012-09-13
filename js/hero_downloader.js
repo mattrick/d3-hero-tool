@@ -1,27 +1,3 @@
-function get_icon(skill)
-{
-    return (skill) ? 'http://eu.media.blizzard.com/d3/icons/skills/64/' + skill + '.png' : '';
-}
-
-function loadImages(sources, callback) {
-        var images = {};
-        var loadedImages = 0;
-        var numImages = 0;
-        // get num of sources
-        for(var src in sources) {
-          numImages++;
-        }
-        for(var src in sources) {
-          images[src] = new Image();
-          images[src].onload = function() {
-            if(++loadedImages >= numImages) {
-              callback(images);
-            }
-          };
-          images[src].src = sources[src];
-        }
-      }
-
 function addItem(items, slot)
 {
     if (items[slot])
@@ -30,7 +6,6 @@ function addItem(items, slot)
         $("#equipment #" + slot).addClass(items[slot]["displayColor"] + 'Big');
     }
 }
-
 
 var Tool = {
 	data: '',
@@ -78,18 +53,22 @@ var Tool = {
 
 			_this.loadHeader(_data["name"], _this.profile + '#' + _this.tag, _data["class"], _data["level"], _data["paragonLevel"]);
 			_this.loadEquipment(_data["class"], _data["gender"], _data["items"]);
+
+            $("article").show();
 		}, 'jsonp');
 	}
 }
 
 $(function () {
-	//$("#load_url").click(function() {
-		var url = "http://eu.battle.net/d3/pl/profile/mattrick-2123/hero/2762321";
-		//var url = "http://eu.battle.net/d3/pl/profile/mattrick-2123/hero/2759703";
-        //var url = "http://eu.battle.net/d3/pl/profile/mattrick-2123/hero/13098230";
-		//var url = $("#url").val();
+    $("form").submit(function() {
+        return false;
+    });
+	$("#load_url").click(function() {
+		var url = $("#url").val();
 
 		Tool.loadUrl(url);
-	//});
+
+        $("form").hide();
+	});
 });
 

@@ -2,6 +2,10 @@ h1, h2, h3 {
 	margin: 0;
 }
 
+article {
+    display: none;
+}
+
 article header {
 	text-align: center;
 }
