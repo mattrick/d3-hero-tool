@@ -48,6 +48,9 @@ function addItem(sources, slot)
 
 function getQuality(items, images, slot, affix)
 {
+    if (!items[slot])
+        return null;
+
     switch (items[slot]["displayColor"])
     {
         case 'blue':
@@ -99,8 +102,11 @@ var Tool = {
 			loadImages(sources, function(images) {
 				context.drawImage(images.background, 0, 0, 509, 436, 0, 0, 509, 436);
 
-                context.drawImage(getQuality(items, images, "hands", "Big"), 219, 141, 60, 80);
-                context.drawImage(getQuality(items, images, "mainHand", "Big"), 219, 294, 60, 124);
+                if (items["hands"])
+                    context.drawImage(getQuality(items, images, "hands", "Big"), 219, 141, 60, 80);
+
+                if (items["mainHand"])
+                    context.drawImage(getQuality(items, images, "mainHand", "Big"), 219, 294, 60, 124);
 			});
 
             addItem(items, "hands");
@@ -130,8 +136,9 @@ var Tool = {
 
 $(function () {
 	//$("#load_url").click(function() {
-		var url = "http://eu.battle.net/d3/pl/profile/mattrick-2123/hero/2762321";
+		//var url = "http://eu.battle.net/d3/pl/profile/mattrick-2123/hero/2762321";
 		//var url = "http://eu.battle.net/d3/pl/profile/mattrick-2123/hero/2759703";
+        var url = "http://eu.battle.net/d3/pl/profile/mattrick-2123/hero/13098230";
 		//var url = $("#url").val();
 
 		Tool.loadUrl(url);
