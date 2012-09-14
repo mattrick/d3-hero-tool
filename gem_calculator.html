@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="Diablo III hero tool" />
+		<meta name="author" content="mattrick" />
+		
+		<title>d3-hero-tool</title>
+		
+		<link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/gem_calculator.css" />
+
+		<script src="js/jquery-1.8.1.min.js"></script>
+		
+		<script src="js/gem_calculator.js"></script>
+
+        <!-- facyBox -->
+
+        <link href="facyBox/facybox.css" media="screen" rel="stylesheet" type="text/css"/>
+        <link href="facyBox/facybox_urls.css" media="screen" rel="stylesheet" type="text/css"/>
+        <script src="facyBox/facybox.js" type="text/javascript"></script>
+
+        <!-- ######### -->
+	</head>
+	<body>
+	<header>
+		<h1>d3-hero-tool</h1>
+        <navbar>
+            <ul>
+                <li><a href="index.html">Hero Tool</a></li>
+                <li><a href="gem_calculator.html">Gem Calculator</a></li>
+            </ul>
+        </navbar>
+	</header>
+	<article>
+        <div id="wyslany">test</div>
+        <section id="gem_calculator">
+           <form>
+               <table>
+                   <tr>
+                       <td class="border"><img src="http://eu.media.blizzard.com/d3/icons/items/large/crafting_training_page_jeweler_demonhunter_male.png" /></td>
+                       <td rowspan="6"></td>
+                       <td></td>
+                       <td rowspan="6"></td>
+                       <td><input type="submit" value="Calculate"></td>
+                       <td rowspan="6"></td>
+                       <td></td>
+                       <td rowspan="6"></td>
+                   </tr>
+                   <tr>
+                       <td><input type="text" id="page"></td>
+                       <td id="starting" class="bigger border" rowspan="2">click to choose <strong>starting gem</strong></td>
+                       <td class="bigger" rowspan="2"></td>
+                       <td id="final" class="bigger border" rowspan="2">click to choose <strong>final gem</strong></td>
+                   </tr>
+                   <tr>
+                       <td class="border"><img src="http://eu.media.blizzard.com/d3/icons/items/large/crafting_training_tome_jeweler_hell_demonhunter_male.png" /></td>
+                   </tr>
+                   <tr>
+                       <td><input type="text" id="tome_hell"></td>
+                       <td class="bigger" rowspan="2"><input type="text" id="from_cost"></td>
+                       <td class="bigger" rowspan="3"></td>
+                       <td class="bigger" rowspan="2"><span id="to_cost"></span></td>
+                   </tr>
+                   <tr>
+                       <td class="border"><img src="http://eu.media.blizzard.com/d3/icons/items/large/crafting_training_tome_inferno_demonhunter_male.png" /></td>
+                   </tr>
+                   <tr>
+                       <td><input type="text" id="tome_inferno"></td>
+                       <td></td>
+                       <td></td>
+                   </tr>
+               </table>
+           </form>
+        </section>
+	</article>
+	<footer>
+	</footer>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+#gem_calculator table {
+    margin: 1em auto;
+    border: 1px black solid;
+    padding: 2.5em;
+}
+
+#gem_calculator td {
+    width: 64px;
+    height: 64px;
+}
+
+#gem_calculator .border {
+    border: 1px solid black;
+}
+
+#gem_calculator .bigger {
+    width: 128px;
+}
+
+#gem_calculator table td > input {
+    width: 100%;
+}
+
+#starting, #final {
+    text-align: center;
+}
+#starting > strong, #final >strong {
+    display: block;
+    font-size: larger;
+}
