@@ -28,3 +28,10 @@
     display: block;
     font-size: larger;
 }
+
+#gem_selector img, #starting img, #final img {
+    filter: url(filters.svg#grayscale); /* Firefox 3.5+ */
+    filter: gray; /* IE6-9 */
+    +filter: gray;
+    -webkit-filter: grayscale(1); /* Google Chrome & Safari 6+ */
+}
