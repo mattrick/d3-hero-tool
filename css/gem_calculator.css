@@ -1,37 +1,78 @@
-#gem_calculator table {
+#gem_calculator > form > table {
     margin: 1em auto;
     border: 1px black solid;
     padding: 2.5em;
 }
 
-#gem_calculator td {
+#gem_calculator > form > table td {
     width: 64px;
     height: 64px;
+    vertical-align: top;
 }
 
-#gem_calculator .border {
+#gem_calculator > form > table .border {
     border: 1px solid black;
 }
 
-#gem_calculator .bigger {
+#gem_calculator > form > table .bigger {
     width: 128px;
 }
 
-#gem_calculator table td > input {
+#gem_calculator > form > table td > input {
     width: 100%;
+    margin-top: 1em;
 }
 
 #starting, #final {
     text-align: center;
+    vertical-align: middle !important;
 }
 #starting > strong, #final >strong {
     display: block;
     font-size: larger;
 }
 
-#gem_selector img, #starting img, #final img {
-    filter: url(filters.svg#grayscale); /* Firefox 3.5+ */
-    filter: gray; /* IE6-9 */
+#gem_selector img, #starting img, #final img, .grayed {
+    filter: url(filters.svg#grayscale);
+    filter: gray;
     +filter: gray;
-    -webkit-filter: grayscale(1); /* Google Chrome & Safari 6+ */
+    -webkit-filter: grayscale(1);
+}
+
+#details, #profit {
+    vertical-align: top;
+}
+
+#details > div, #profit > div {
+    display: none;
+}
+
+#details > div > h3, #profit > div > h3 {
+    border-bottom: 1px solid black;
+    margin-bottom: 0.5em;
+}
+
+.item span {
+    display: block;
+    text-align: right;
+}
+
+.item .count {
+    margin-top: -1em;
+    font-size: smaller;
+}
+
+.item .result {
+    font-weight: bold;
+}
+
+#total table {
+    width: 100%;
+    display: none;
+}
+
+#total table td {
+    text-align: center;
+    vertical-align: top;
+    font-weight: bold;
 }

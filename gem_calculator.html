@@ -40,16 +40,48 @@
                        <td class="border"><img src="http://eu.media.blizzard.com/d3/icons/items/large/crafting_training_page_jeweler_demonhunter_male.png" /></td>
                        <td rowspan="6"></td>
                        <td></td>
-                       <td rowspan="6"></td>
-                       <td><input type="submit" value="Calculate"></td>
-                       <td rowspan="6"></td>
+                       <td rowspan="5"></td>
+                       <td style="width:160px"><input type="submit" value="Calculate"></td>
+                       <td rowspan="5"></td>
                        <td></td>
                        <td rowspan="6"></td>
                    </tr>
                    <tr>
                        <td><input type="text" id="page"></td>
                        <td id="starting" class="bigger border" rowspan="2">click to choose <strong>starting gem</strong></td>
-                       <td class="bigger" rowspan="2"></td>
+                       <td id="details" class="bigger" rowspan="4" style="width:160px">
+                           <div>
+                               <h3>Cost</h3>
+                               <div class="item">
+                                   Gems
+                                   <span class="count"></span>
+                                   <span class="result"></span>
+                               </div>
+                               <div class="item">
+                                   Pages
+                                   <span class="count"></span>
+                                   <span class="result"></span>
+                               </div>
+                               <div class="item">
+                                   Tomes hell
+                                   <span class="count"></span>
+                                   <span class="result"></span>
+                               </div>
+                               <div class="item">
+                                   Tomes inferno
+                                   <span class="count"></span>
+                                   <span class="result"></span>
+                               </div>
+                               <div class="item">
+                                   Crafting
+                                   <span class="count"></span>
+                                   <span class="result"></span>
+                               </div>
+                               <h3>
+                                  Total
+                               </h3>
+                           </div>
+                       </td>
                        <td id="final" class="bigger border" rowspan="2">click to choose <strong>final gem</strong></td>
                    </tr>
                    <tr>
@@ -58,16 +90,54 @@
                    <tr>
                        <td><input type="text" id="tome_hell"></td>
                        <td class="bigger" rowspan="2"><input type="text" id="starting_cost"></td>
-                       <td class="bigger" rowspan="3"></td>
-                       <td class="bigger" rowspan="2"><span id="ah_cost"></span></td>
+                       <td id="profit" class="bigger" rowspan="2">
+                           <div>
+                               <h3>Sell</h3>
+                               <div class="item">
+                                   Profit
+                                   <span class="count">(direct trade)</span>
+                                   <span class="result"></span>
+                               </div>
+                               <div class="item">
+                                   Profit
+                                   <span class="count">(AH 15% fee)</span>
+                                   <span class="result"></span>
+                               </div>
+                           </div>
+                       </td>
                    </tr>
                    <tr>
                        <td class="border"><img src="http://eu.media.blizzard.com/d3/icons/items/large/crafting_training_tome_inferno_demonhunter_male.png" /></td>
                    </tr>
                    <tr>
                        <td><input type="text" id="tome_inferno"></td>
-                       <td></td>
-                       <td></td>
+                       <td colspan="5" id="total">
+                           <table>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    <img src="http://eu.media.blizzard.com/d3/icons/items/large/crafting_training_page_jeweler_demonhunter_male.png" />
+                                </td>
+                                <td>
+                                    <img src="http://eu.media.blizzard.com/d3/icons/items/large/crafting_training_tome_jeweler_hell_demonhunter_male.png" />
+                                </td>
+                                <td>
+                                    <img src="http://eu.media.blizzard.com/d3/icons/items/large/crafting_training_tome_inferno_demonhunter_male.png" />
+                                </td>
+                                <td>
+                                    <img src="img/gold.png" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                           </table>
+                       </td>
                    </tr>
                </table>
            </form>

@@ -57,7 +57,7 @@ var Tool = {
             $("article").show();
 		}, 'jsonp');
 	}
-}
+};
 
 $(function () {
     $("form").submit(function() {

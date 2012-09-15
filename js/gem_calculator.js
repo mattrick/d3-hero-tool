@@ -1,3 +1,13 @@
+Array.prototype.sum = function() {
+    for (var i = 0, sum = 0; i < this.length; sum += this[i++]);
+    return sum;
+};
+
+function numberWithSeparator(n, separator) {
+    var parts=n.toString().split(".");
+    return parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, separator) + (parts[1] ? "." + parts[1] : "");
+}
+
 var vStarting = 0;
 var vFinal = 0;
 
@@ -43,14 +53,14 @@ function generateGemSelector(which) {
     }
 
     result += '\t</table>\n' +
-              '</section>'
+              '</section>';
 
     return result;
 }
 
 function gemSelectedStarting(gem) {
     vStarting = gem;
-    $("#starting").html('<img src="http://eu.media.blizzard.com/d3/icons/items/large/emerald_' + ((gem < 10) ? '0' : '') + gem + '_demonhunter_male.png" />')
+    $("#starting").html('<img src="http://eu.media.blizzard.com/d3/icons/items/large/emerald_' + ((gem < 10) ? '0' : '') + gem + '_demonhunter_male.png" />');
     if (vStarting >= vFinal)
         gemSelectedFinal(0);
 }
@@ -58,7 +68,7 @@ function gemSelectedStarting(gem) {
 function gemSelectedFinal(gem) {
     vFinal = gem;
     if (gem)
-        $("#final").html('<img src="http://eu.media.blizzard.com/d3/icons/items/large/emerald_' + ((gem < 10) ? '0' : '') + gem + '_demonhunter_male.png" />')
+        $("#final").html('<img src="http://eu.media.blizzard.com/d3/icons/items/large/emerald_' + ((gem < 10) ? '0' : '') + gem + '_demonhunter_male.png" />');
     else
         $("#final").html('click to choose <strong>final gem</strong>');
 }
@@ -79,11 +89,37 @@ function calculateGems() {
     });
 
     var result = calculateCost(vStarting, vFinal);
-    var additional = [result[0] * $("#starting_cost").val(), result[2] * $("#page").val(), result[3] * $("#tome_hell").val(), result[4] * $("#tome_inferno").val()];
+    var price = [$("#starting_cost").val(), $("#page").val(), $("#tome_hell").val(), $("#tome_inferno").val(), 1];
 
-    var sum = result[1] + additional[0] + additional[1] + additional[2] + additional[3];
+    result[4] = (price[4] += result[4] -= price[4]) - result[4];
 
-    $("#ah_cost").text("> " + sum * (100/85));
+    var i = 0;
+    var whole = [];
+
+    $("#details .item ").each(function() {
+        $(".count", this).text(result[i] + " x " + ((price[i]) ? price[i] : '0'));
+        $(".result", this).text(numberWithSeparator(result[i] * price[i], " "));
+        whole[i] = result[i] * price[i];
+        i++;
+    });
+
+    $("#details > div").show();
+
+	$("#profit .item .result").eq(0).text("> " + numberWithSeparator(whole.sum(), " "));
+	$("#profit .item .result").eq(1).text("> " + numberWithSeparator(Math.ceil(whole.sum() * (100/85)), " "));
+
+    $("#profit > div").show();
+
+	$("#total td").first().html('<img class="grayed" src="http://eu.media.blizzard.com/d3/icons/items/large/emerald_' + ((vStarting < 10) ? '0' : '') + vStarting + '_demonhunter_male.png" />');
+
+	var i = 0;
+
+	$("td", $("#total tr").eq(1)).slice(0, 4).each(function () {
+		$(this).text(result[i++]);
+	});
+	$("td", $("#total tr").eq(1)).last().text(whole.sum());
+
+	$("#total table").show();
 }
 
 function calculateCost(starting, final) {
@@ -119,20 +155,20 @@ function calculateCost(starting, final) {
             upgradeFactor = 2;
 
         result[1] *= upgradeFactor;
-        result[1] += cost[i][0];
+        result[1] += cost[i][1];
         result[2] *= upgradeFactor;
-        result[2] += cost[i][1];
+        result[2] += cost[i][2];
         result[3] *= upgradeFactor;
-        result[3] += cost[i][2];
+        result[3] += cost[i][3];
         result[4] *= upgradeFactor;
-        result[4] += cost[i][3];
+        result[4] += cost[i][0];
     }
 
     return result;
 }
 
 //              [gold,   pages,  tomes1, tomes2  ],
-var cost = [    [0,      0,      0,      0,      ],
+var cost = [    [0,      0,      0,      0       ],
                 [10,     0,      0,      0       ],
                 [25,     0,      0,      0       ],
                 [40,     0,      0,      0       ],
